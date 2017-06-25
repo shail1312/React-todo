@@ -17,9 +17,8 @@ describe('Todo', () => {
       text: 'Write todo.test.jsx test',
       completed: true
     };
-    var sty = expect.createSpy();
+    var spy = expect.createSpy();
     var todo = TestUtils.renderIntoDocument(<Todo {...todoData} onToggle={spy}/>);
-
     var $el = $(ReactDOM.findDOMNode(todo));
 
     TestUtils.Simulate.click($el[0]);
